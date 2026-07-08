@@ -3,170 +3,225 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Haziq Ahmed Baig — QA Engineer | Web · Mobile · Blockchain</title>
-<meta name="description" content="Software QA Engineer with 2+ years delivering end-to-end QA across web, mobile, and blockchain — Web3, DeFi & AI products." />
+<title>Haziq Ahmed Baig — Software QA Engineer | Web · Mobile · Blockchain</title>
+<meta name="description" content="Software QA Engineer with 2+ years delivering end-to-end QA across web, mobile, and blockchain — Web3, DeFi & AI products. Full STLC ownership." />
 <meta name="author" content="Haziq Ahmed Baig" />
-<meta name="theme-color" content="#FAFBFC" />
+<meta name="theme-color" content="#0B1220" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Haziq Ahmed Baig — Software QA Engineer" />
 <meta property="og:description" content="End-to-end QA across web, mobile, and blockchain — Web3, DeFi & AI products." />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --bg:#FAFBFC;
-  --bg2:#F1F5F9;
+  --navy:#0B1220;
+  --navy2:#0F1A2E;
+  --navy-card:#121F36;
+  --navy-line:#1E2E4A;
+  --cyan:#22D3EE;
+  --cyan-deep:#0891B2;
+  --blue:#3B82F6;
+  --paper:#F8FAFC;
+  --paper2:#EEF2F7;
   --card:#FFFFFF;
   --ink:#0F172A;
   --soft:#475569;
   --muted:#94A3B8;
   --line:#E2E8F0;
-  --accent:#2563EB;
-  --accent-soft:#EFF6FF;
-  --ok:#16A34A;
-  --radius:16px;
+  --ok:#22C55E;
+  --ok-deep:#16A34A;
+  --warn:#F59E0B;
+  --fail:#EF4444;
+  --r:14px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:Inter,sans-serif;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-::selection{background:var(--accent);color:#fff}
+body{background:var(--paper);color:var(--ink);font-family:Inter,sans-serif;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--cyan);color:var(--navy)}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-section{padding:104px 0;content-visibility:auto;contain-intrinsic-size:auto 800px}
+.wrap{max-width:1150px;margin:0 auto;padding:0 24px}
+section{padding:100px 0;content-visibility:auto;contain-intrinsic-size:auto 900px}
 .mono{font-family:'JetBrains Mono',monospace}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 .rv.in{opacity:1;transform:none}
 
-/* ---------- nav ---------- */
-nav{position:sticky;top:0;z-index:100;background:rgba(250,251,252,.9);border-bottom:1px solid var(--line)}
-@supports (backdrop-filter:blur(4px)){nav{backdrop-filter:blur(12px)}}
-.nav-inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px}
-.brand{font-weight:800;font-size:1.05rem;letter-spacing:-.02em;display:flex;align-items:center;gap:9px}
-.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
-.nav-links{display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none}
+/* ================= NAV ================= */
+nav{position:sticky;top:0;z-index:100;background:rgba(11,18,32,.94);border-bottom:1px solid var(--navy-line)}
+@supports (backdrop-filter:blur(4px)){nav{background:rgba(11,18,32,.8);backdrop-filter:blur(14px)}}
+.nav-inner{max-width:1150px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:'Space Grotesk';font-weight:700;font-size:1.02rem}
+.brand-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--cyan),var(--blue));display:grid;place-items:center;color:var(--navy);font-weight:800;font-size:.85rem;font-family:Inter}
+.nav-links{display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none}
 .nav-links::-webkit-scrollbar{display:none}
-.nav-links a{padding:9px 16px;border-radius:10px;font-size:.9rem;font-weight:500;color:var(--soft);transition:color .2s,background .2s;white-space:nowrap}
-.nav-links a:hover,.nav-links a.active{color:var(--ink);background:var(--bg2)}
-.nav-links a.cta{background:var(--accent);color:#fff;font-weight:600;margin-left:8px}
-.nav-links a.cta:hover{background:#1D4ED8}
-@media(max-width:720px){.nav-links a{padding:8px 11px;font-size:.82rem}}
+.nav-links a{padding:9px 15px;border-radius:9px;font-size:.88rem;font-weight:500;color:#8FA3C2;transition:color .2s,background .2s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(255,255,255,.07)}
+.nav-links a.cta{background:var(--cyan);color:var(--navy);font-weight:700;margin-left:10px}
+.nav-links a.cta:hover{background:#67E8F9}
+@media(max-width:720px){.nav-links a{padding:8px 10px;font-size:.8rem}.brand span{display:none}}
 
-/* ---------- hero ---------- */
-.hero{padding:120px 0 96px}
-.pill{display:inline-flex;align-items:center;gap:9px;background:var(--accent-soft);color:var(--accent);
-  font-size:.85rem;font-weight:600;padding:9px 18px;border-radius:99px;margin-bottom:34px}
-.pill .dot{width:8px;height:8px;border-radius:50%;background:var(--ok)}
-h1{font-size:clamp(2.6rem,7.5vw,4.9rem);line-height:1.04;letter-spacing:-.035em;font-weight:800}
-h1 .a{color:var(--accent)}
-.hero-sub{max-width:580px;font-size:clamp(1.05rem,2vw,1.2rem);color:var(--soft);margin:28px 0 8px}
-.type-line{font-family:'JetBrains Mono',monospace;font-size:.9rem;color:var(--muted);min-height:1.7em;margin-bottom:40px}
-.type-line::before{content:'→ ';color:var(--accent);font-weight:600}
+/* ================= HERO ================= */
+.hero{background:var(--navy);color:#fff;padding:96px 0 90px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(34,211,238,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.05) 1px,transparent 1px);
+  background-size:44px 44px;mask-image:radial-gradient(ellipse 90% 80% at 30% 20%,#000 30%,transparent 75%)}
+.hero::after{content:'';position:absolute;width:560px;height:560px;border-radius:50%;right:-140px;top:-180px;
+  background:radial-gradient(circle,rgba(34,211,238,.13),transparent 65%)}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+@media(max-width:960px){.hero-inner{grid-template-columns:1fr}}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:.78rem;
+  color:var(--cyan);border:1px solid rgba(34,211,238,.35);background:rgba(34,211,238,.07);padding:8px 16px;border-radius:99px;margin-bottom:28px}
+.dot-ok{width:8px;height:8px;border-radius:50%;background:var(--ok);flex:0 0 auto}
+html.fx .dot-ok{box-shadow:0 0 0 0 rgba(34,197,94,.55);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}}
+.hero h1{font-size:clamp(2.3rem,5.6vw,3.9rem);line-height:1.06;font-weight:700}
+.hero h1 .cy{color:var(--cyan)}
+.hero-name{font-family:'JetBrains Mono',monospace;font-size:.9rem;color:#8FA3C2;margin-bottom:14px}
+.hero-name b{color:#fff;font-weight:600}
+.hero-sub{color:#A9BAD6;font-size:clamp(1rem,1.8vw,1.14rem);max-width:540px;margin:22px 0 6px}
+.type-line{font-family:'JetBrains Mono',monospace;font-size:.86rem;color:var(--cyan);min-height:1.7em;margin-bottom:34px}
+.type-line::before{content:'$ ';color:#5B6E8F}
 .btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:12px;font-weight:600;font-size:.95rem;transition:transform .2s,box-shadow .2s,background .2s;border:1.5px solid transparent}
-.btn-main{background:var(--accent);color:#fff;box-shadow:0 10px 28px rgba(37,99,235,.25)}
-.btn-main:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(37,99,235,.32);background:#1D4ED8}
-.btn-ghost{background:var(--card);color:var(--ink);border-color:var(--line)}
-.btn-ghost:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:72px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
-.stat b{display:block;font-size:2.2rem;font-weight:800;letter-spacing:-.03em}
-.stat b .a{color:var(--accent)}
-.stat span{font-size:.95rem;color:var(--soft);font-weight:600;display:block;margin-top:4px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 28px;border-radius:11px;font-weight:700;font-size:.93rem;transition:transform .2s,box-shadow .2s,background .2s;border:1.5px solid transparent}
+.btn-cy{background:var(--cyan);color:var(--navy);box-shadow:0 10px 30px rgba(34,211,238,.28)}
+.btn-cy:hover{transform:translateY(-2px);background:#67E8F9;box-shadow:0 14px 36px rgba(34,211,238,.36)}
+.btn-dark{background:transparent;color:#DCE6F5;border-color:var(--navy-line)}
+.btn-dark:hover{transform:translateY(-2px);border-color:var(--cyan);color:var(--cyan)}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:52px}
+@media(max-width:720px){.hero-stats{grid-template-columns:repeat(2,1fr)}}
+.hstat{background:var(--navy-card);border:1px solid var(--navy-line);border-radius:var(--r);padding:16px 18px}
+.hstat b{display:block;font-family:'Space Grotesk';font-size:1.65rem;font-weight:700;color:#fff;letter-spacing:-.02em}
+.hstat b em{color:var(--cyan);font-style:normal}
+.hstat span{font-size:.78rem;color:#8FA3C2;font-weight:500}
 
-/* ---------- section head ---------- */
-.kicker{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:14px;font-weight:600}
-h2.sec{font-size:clamp(1.8rem,4.5vw,2.7rem);letter-spacing:-.03em;font-weight:800;margin-bottom:18px}
-.sec-intro{max-width:620px;color:var(--soft);margin-bottom:52px}
+/* --- hero dashboard mock --- */
+.dash{display:flex;flex-direction:column;gap:14px}
+@media(max-width:960px){.dash{max-width:520px}}
+.dcard{background:var(--navy-card);border:1px solid var(--navy-line);border-radius:var(--r);padding:20px 22px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.dhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.dhead span{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:#8FA3C2;text-transform:uppercase;letter-spacing:.1em}
+.chip-pass{display:inline-flex;align-items:center;gap:7px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.35);color:#4ADE80;font-size:.72rem;font-weight:600;padding:4px 12px;border-radius:99px;font-family:'JetBrains Mono',monospace}
+.counts{display:flex;gap:26px;margin-bottom:16px}
+.cnt b{display:block;font-family:'Space Grotesk';font-size:1.8rem;font-weight:700;letter-spacing:-.02em}
+.cnt span{font-size:.72rem;color:#8FA3C2;font-family:'JetBrains Mono',monospace;text-transform:uppercase}
+.c-pass{color:#4ADE80}.c-fail{color:#F87171}.c-skip{color:#8FA3C2}
+.pbar{height:7px;border-radius:99px;background:#1B2A45;overflow:hidden;margin-bottom:10px}
+.pbar i{display:block;height:100%;width:97%;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--ok))}
+.dfoot{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:#8FA3C2}
+.pipe{display:flex;align-items:center;gap:0;flex-wrap:wrap}
+.pstep{display:flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:.74rem;color:#C7D4E8}
+.pdot{width:9px;height:9px;border-radius:50%;background:var(--ok)}
+.pdot.run{background:var(--cyan)}
+html.fx .pdot.run{animation:blinkc 1.2s steps(1) infinite}
+@keyframes blinkc{50%{opacity:.3}}
+.pline{width:26px;height:1px;background:var(--navy-line);margin:0 8px}
+.dlog{font-family:'JetBrains Mono',monospace;font-size:.76rem;line-height:1.9;color:#8FA3C2}
+.dlog .ok{color:#4ADE80}.dlog .cy{color:var(--cyan)}
 
-/* ---------- about ---------- */
-.about-grid{display:grid;grid-template-columns:1fr 1.7fr;gap:22px;align-items:start}
+/* ================= SECTION HEAD ================= */
+.kicker{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan-deep);display:block;margin-bottom:12px;font-weight:600}
+h2.sec{font-size:clamp(1.8rem,4.4vw,2.6rem);font-weight:700;margin-bottom:16px}
+.sec-intro{max-width:640px;color:var(--soft);margin-bottom:50px;font-size:1.02rem}
+
+/* ================= ABOUT ================= */
+.about-grid{display:grid;grid-template-columns:1fr 1.75fr;gap:20px;align-items:start}
 @media(max-width:860px){.about-grid{grid-template-columns:1fr}}
-.id-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px;text-align:left}
-.avatar{width:76px;height:76px;border-radius:20px;background:linear-gradient(135deg,var(--accent),#60A5FA);display:grid;place-items:center;font-weight:800;font-size:1.5rem;color:#fff;margin-bottom:18px}
-.id-card h3{font-size:1.15rem;font-weight:700;letter-spacing:-.01em}
-.id-card p{color:var(--muted);font-size:.9rem;margin-top:2px}
-.badge-open{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:8px 14px;border-radius:99px;
-  background:#F0FDF4;border:1px solid #BBF7D0;color:var(--ok);font-size:.8rem;font-weight:600}
-.about-body p{color:var(--soft);margin-bottom:16px;font-size:1rem}
-.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:56px}
-.pillar{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:border-color .25s,box-shadow .25s}
-.pillar:hover{border-color:var(--accent);box-shadow:0 12px 30px rgba(37,99,235,.08)}
-.pillar .ic{width:40px;height:40px;border-radius:11px;background:var(--accent-soft);display:grid;place-items:center;font-size:1.1rem;margin-bottom:14px}
-.pillar h4{font-size:.98rem;font-weight:700;margin-bottom:8px;letter-spacing:-.01em}
-.pillar p{font-size:.88rem;color:var(--soft)}
+.id-card{background:var(--navy);color:#fff;border-radius:var(--r);padding:34px;position:relative;overflow:hidden}
+.id-card::after{content:'';position:absolute;width:220px;height:220px;border-radius:50%;right:-70px;bottom:-90px;background:radial-gradient(circle,rgba(34,211,238,.16),transparent 65%)}
+.avatar{width:78px;height:78px;border-radius:18px;background:linear-gradient(135deg,var(--cyan),var(--blue));display:grid;place-items:center;font-weight:800;font-size:1.5rem;color:var(--navy);margin-bottom:18px;font-family:Inter}
+.id-card h3{font-size:1.18rem;font-weight:700}
+.id-card p{color:#8FA3C2;font-size:.9rem;margin-top:2px}
+.badge-open{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:8px 15px;border-radius:99px;
+  background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.35);color:#4ADE80;font-size:.8rem;font-weight:600;position:relative;z-index:1}
+.about-body{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:34px}
+.about-body p{color:var(--soft);margin-bottom:15px;font-size:1rem}
+.about-body p:last-child{margin-bottom:0}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:14px;margin-top:52px}
+.pillar{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:border-color .25s,box-shadow .25s,transform .2s}
+.pillar:hover{border-color:var(--cyan);box-shadow:0 14px 34px rgba(8,145,178,.1);transform:translateY(-3px)}
+.pillar .ic{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,rgba(34,211,238,.15),rgba(59,130,246,.12));display:grid;place-items:center;font-size:1.15rem;margin-bottom:14px}
+.pillar h4{font-size:1rem;font-weight:700;margin-bottom:8px;font-family:'Space Grotesk'}
+.pillar p{font-size:.9rem;color:var(--soft)}
 
-/* ---------- skills ---------- */
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
-.skill{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:border-color .25s,box-shadow .25s}
-.skill:hover{border-color:var(--accent);box-shadow:0 12px 30px rgba(37,99,235,.08)}
-.skill h4{font-size:.95rem;font-weight:700;margin-bottom:15px;display:flex;align-items:center;gap:9px;letter-spacing:-.01em}
-.skill h4 .sq{width:9px;height:9px;border-radius:3px;background:var(--accent)}
-.chips{display:flex;flex-wrap:wrap;gap:7px}
-.chip{font-size:.8rem;font-weight:500;padding:6px 13px;border-radius:8px;background:var(--bg2);color:var(--soft)}
+/* ================= SKILLS ================= */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:border-color .25s,box-shadow .25s}
+.skill:hover{border-color:var(--cyan);box-shadow:0 14px 34px rgba(8,145,178,.1)}
+.skill h4{font-size:1rem;font-weight:700;margin-bottom:15px;display:flex;align-items:center;gap:10px;font-family:'Space Grotesk'}
+.skill h4 .num{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--cyan-deep);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.83rem;font-weight:600;padding:7px 14px;border-radius:9px;background:var(--paper2);color:var(--ink);border:1px solid transparent;transition:border-color .2s,background .2s}
+.chip:hover{border-color:var(--cyan);background:#ECFEFF}
+.chip-dk{font-size:.78rem;font-weight:600;padding:5px 12px;border-radius:8px;background:var(--navy);color:#A9BAD6}
 
-/* ---------- terminal ---------- */
-.term{background:var(--ink);border-radius:var(--radius);margin-top:56px;overflow:hidden;box-shadow:0 24px 60px rgba(15,23,42,.18)}
-.term-bar{display:flex;align-items:center;justify-content:space-between;padding:13px 20px;border-bottom:1px solid #1E293B}
-.term-bar span{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#64748B}
-.term-bar .tag{background:#052E16;color:#4ADE80;padding:3px 12px;border-radius:6px;font-weight:600;font-size:.7rem}
-.term-body{padding:24px;font-family:'JetBrains Mono',monospace;font-size:.84rem;line-height:1.95;color:#94A3B8;overflow-x:auto}
-.term-body .cmd{color:#E2E8F0;font-weight:600}.term-body .ok{color:#4ADE80}.term-body .info{color:#60A5FA;font-weight:600}
-
-/* ---------- cases ---------- */
-.case{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:36px;margin-bottom:18px;transition:border-color .25s,box-shadow .25s}
-.case:hover{border-color:var(--accent);box-shadow:0 16px 44px rgba(37,99,235,.09)}
-.case-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:22px}
-.case-num{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--accent);font-weight:700;letter-spacing:.12em;display:block;margin-bottom:8px}
-.case h3{font-size:clamp(1.15rem,2.5vw,1.5rem);font-weight:800;letter-spacing:-.015em;line-height:1.3}
-.case-tags{display:flex;flex-wrap:wrap;gap:7px;justify-content:flex-end}
+/* ================= CASES ================= */
+.case{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:0;margin-bottom:20px;overflow:hidden;transition:border-color .25s,box-shadow .25s}
+.case:hover{border-color:var(--cyan);box-shadow:0 18px 44px rgba(8,145,178,.1)}
+.case-top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap;padding:30px 34px 22px}
+.case-num{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--cyan-deep);font-weight:700;letter-spacing:.14em;display:block;margin-bottom:8px}
+.case h3{font-size:clamp(1.15rem,2.5vw,1.45rem);font-weight:700;line-height:1.3}
+.case-tags{display:flex;flex-wrap:wrap;gap:7px;justify-content:flex-end;padding-top:4px}
 @media(max-width:720px){.case-tags{justify-content:flex-start}}
-.case-body{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-bottom:22px}
-.case-body h5{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:600}
-.case-body p{font-size:.92rem;color:var(--soft)}
-.case-metrics{display:flex;flex-wrap:wrap;gap:8px;border-top:1px solid var(--line);padding-top:20px}
-.metric{font-size:.8rem;font-weight:600;padding:7px 14px;border-radius:8px;background:#F0FDF4;color:var(--ok)}
+.case-body{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:24px;padding:0 34px 26px}
+.case-body h5{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan-deep);margin-bottom:8px;font-weight:700}
+.case-body p{font-size:.93rem;color:var(--soft)}
+.case-metrics{display:flex;flex-wrap:wrap;gap:10px;background:var(--paper2);padding:16px 34px;border-top:1px solid var(--line)}
+.metric{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;font-weight:700;color:var(--ok-deep)}
+.metric::before{content:'✓';display:grid;place-items:center;width:19px;height:19px;border-radius:6px;background:#DCFCE7;color:var(--ok-deep);font-size:.72rem}
+.metric+.metric{margin-left:14px}
+@media(max-width:720px){.metric+.metric{margin-left:0}}
 
-/* ---------- resume ---------- */
-.resume-band{background:var(--bg2)}
-.timeline{margin:44px 0;border-left:2px solid var(--accent);padding-left:32px;max-width:640px}
-.tl{position:relative;padding-bottom:32px}
+/* ================= RESUME (dark band) ================= */
+.resume-band{background:var(--navy);color:#fff}
+.resume-band .kicker{color:var(--cyan)}
+.resume-band .sec-intro{color:#8FA3C2}
+.timeline{margin:42px 0;border-left:2px solid var(--cyan);padding-left:32px;max-width:660px}
+.tl{position:relative;padding-bottom:34px}
 .tl:last-child{padding-bottom:0}
-.tl::before{content:'';position:absolute;left:-40px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
-.tl b{font-size:1.18rem;font-weight:800;display:block;letter-spacing:-.01em}
-.tl span{color:var(--ink);font-size:1rem;font-weight:600;display:inline-block;margin-top:6px;background:var(--accent-soft);color:var(--accent);padding:4px 12px;border-radius:8px}
-.certs{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
-.cert{font-size:.82rem;font-weight:500;border:1px solid var(--line);background:var(--card);padding:9px 16px;border-radius:10px;color:var(--soft)}
+.tl::before{content:'';position:absolute;left:-40px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 5px rgba(34,211,238,.15)}
+.tl b{font-size:1.18rem;font-weight:700;display:block;font-family:'Space Grotesk'}
+.tl .when{display:inline-block;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:.82rem;font-weight:600;
+  background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.3);color:var(--cyan);padding:4px 14px;border-radius:99px}
+.tl .org{color:#8FA3C2;font-size:.92rem;margin-top:6px;display:block}
+.certs{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.cert{font-size:.82rem;font-weight:500;border:1px solid var(--navy-line);background:var(--navy-card);padding:10px 16px;border-radius:10px;color:#C7D4E8}
+.cert b{color:var(--cyan)}
 
-/* ---------- contact ---------- */
-.big-cta{font-size:clamp(2rem,5.5vw,3.6rem);font-weight:800;letter-spacing:-.035em;text-align:center;line-height:1.1;margin-bottom:54px}
-.big-cta .a{color:var(--accent)}
-.contact-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:22px}
+/* ================= CONTACT ================= */
+.big-cta{font-family:'Space Grotesk';font-size:clamp(2rem,5.4vw,3.5rem);font-weight:700;letter-spacing:-.03em;text-align:center;line-height:1.08;margin-bottom:52px}
+.big-cta .cy{color:var(--cyan-deep)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:20px}
 @media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
-.clink{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 24px;margin-bottom:14px;transition:border-color .25s,transform .2s}
-.clink:hover{border-color:var(--accent);transform:translateX(4px)}
-.clink small{display:block;font-family:'JetBrains Mono',monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-weight:600;margin-bottom:3px}
-.clink b{font-size:.95rem;font-weight:600}
-.contact-form{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px}
+.clink{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 24px;margin-bottom:14px;transition:border-color .25s,transform .2s}
+.clink:hover{border-color:var(--cyan);transform:translateX(4px)}
+.clink small{display:block;font-family:'JetBrains Mono',monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.15em;color:var(--cyan-deep);font-weight:700;margin-bottom:3px}
+.clink b{font-size:.96rem;font-weight:600}
+.contact-form{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:34px}
 form{display:flex;flex-direction:column;gap:16px}
-label{font-size:.85rem;font-weight:600;color:var(--ink)}
-input,textarea{width:100%;padding:13px 16px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);
+label{font-size:.86rem;font-weight:600}
+input,textarea{width:100%;padding:13px 16px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);
   color:var(--ink);font-family:Inter,sans-serif;font-size:.95rem;margin-top:7px;transition:border-color .2s,box-shadow .2s}
-input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(37,99,235,.1)}
+input:focus,textarea:focus{outline:none;border-color:var(--cyan-deep);box-shadow:0 0 0 4px rgba(34,211,238,.15)}
 .hp{position:absolute;left:-9999px}
-.form-status{font-size:.85rem;font-weight:500;min-height:1.4em}
+.form-status{font-size:.86rem;font-weight:500;min-height:1.4em}
+.btn-submit{background:var(--navy);color:#fff;justify-content:center;width:100%}
+.btn-submit:hover{background:var(--navy2);transform:translateY(-2px)}
 
-/* ---------- footer ---------- */
-footer{border-top:1px solid var(--line);padding:38px 0;background:var(--card)}
-.foot{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.foot .brand{font-size:.95rem}
-.foot p{font-size:.82rem;color:var(--muted)}
+/* ================= FOOTER ================= */
+footer{background:var(--navy);color:#8FA3C2;border-top:1px solid var(--navy-line);padding:44px 0}
+.foot{max-width:1150px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.foot .brand{color:#fff}
+.foot p{font-size:.82rem}
+.foot .links{display:flex;gap:20px}
+.foot .links a{font-size:.85rem;color:#8FA3C2;transition:color .2s}
+.foot .links a:hover{color:var(--cyan)}
 
-/* ---------- a11y ---------- */
-a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+/* ================= A11Y ================= */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--cyan-deep);outline-offset:2px;border-radius:6px}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -178,7 +233,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 
 <nav aria-label="Primary">
   <div class="nav-inner">
-    <a class="brand" href="#home"><span class="dot"></span>Haziq Ahmed Baig</a>
+    <a class="brand" href="#home"><span class="brand-mark">HB</span><span>Haziq Ahmed Baig</span></a>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -189,39 +244,74 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <header class="hero" id="home">
-  <div class="wrap">
-    <span class="pill rv"><span class="dot"></span>Open to work — QA Engineer</span>
-    <h1 class="rv">Quality, shipped<br/>with <span class="a">certainty.</span></h1>
-    <p class="hero-sub rv">Haziq Ahmed Baig — Software QA Engineer owning the full STLC across web, mobile & blockchain. 8+ live products shipped in Web3, DeFi and AI.</p>
-    <p class="type-line rv" id="typeLine"></p>
-    <div class="btns rv">
-      <a class="btn btn-main" href="#work">View case studies</a>
-      <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">Download CV</a>
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow rv"><span class="dot-ok"></span>OPEN TO WORK — QA ENGINEER · WEB · MOBILE · BLOCKCHAIN</span>
+      <p class="hero-name rv">Hi, I'm <b>Haziq Ahmed Baig</b> —</p>
+      <h1 class="rv">Quality assurance for <span class="cy">Web3, DeFi &amp; AI</span> products.</h1>
+      <p class="hero-sub rv">End-to-end QA across web, mobile, and blockchain — owning the full STLC from test planning to release sign-off. 2+ years, 8+ live products shipped.</p>
+      <p class="type-line rv" id="typeLine"></p>
+      <div class="btns rv">
+        <a class="btn btn-cy" href="#work">View case studies →</a>
+        <a class="btn btn-dark" href="resume.pdf" target="_blank" rel="noopener">↓ Download CV</a>
+      </div>
+      <div class="hero-stats rv">
+        <div class="hstat"><b><span data-count="2" data-suffix="+">0</span></b><span>years in QA</span></div>
+        <div class="hstat"><b><span data-count="8" data-suffix="+">0</span></b><span>live products</span></div>
+        <div class="hstat"><b><span data-count="500" data-suffix="+">0</span></b><span>test cases</span></div>
+        <div class="hstat"><b>97<em>%</em></b><span>pass rate</span></div>
+      </div>
     </div>
-    <div class="stats rv">
-      <div class="stat"><b><span data-count="2" data-suffix="+">0</span></b><span>years in QA</span></div>
-      <div class="stat"><b><span data-count="8" data-suffix="+">0</span></b><span>live products shipped</span></div>
-      <div class="stat"><b><span data-count="500" data-suffix="+">0</span></b><span>test cases authored</span></div>
-      <div class="stat"><b>Full STLC<span class="a">.</span></b><span>ownership · plan → sign-off</span></div>
+
+    <!-- QA dashboard mock -->
+    <div class="dash rv" aria-hidden="true">
+      <div class="dcard">
+        <div class="dhead"><span>Test Run Summary</span><span class="chip-pass"><span class="dot-ok"></span>passing</span></div>
+        <div class="counts">
+          <div class="cnt"><b class="c-pass">486</b><span>Passed</span></div>
+          <div class="cnt"><b class="c-fail">3</b><span>Failed</span></div>
+          <div class="cnt"><b class="c-skip">11</b><span>Skipped</span></div>
+        </div>
+        <div class="pbar"><i></i></div>
+        <div class="dfoot"><span>97% pass rate</span><span>500 tests · 42s</span></div>
+      </div>
+      <div class="dcard">
+        <div class="dhead"><span>Pipeline</span></div>
+        <div class="pipe">
+          <span class="pstep"><span class="pdot"></span>Lint</span><span class="pline"></span>
+          <span class="pstep"><span class="pdot"></span>Smoke</span><span class="pline"></span>
+          <span class="pstep"><span class="pdot"></span>API</span><span class="pline"></span>
+          <span class="pstep"><span class="pdot"></span>Regression</span><span class="pline"></span>
+          <span class="pstep"><span class="pdot run"></span>Sign-off</span>
+        </div>
+      </div>
+      <div class="dcard">
+        <div class="dlog">
+<span class="ok">✓</span> wallet / fund movement guarded<br>
+<span class="ok">✓</span> api / zero data leakage verified<br>
+<span class="cy">➜</span> release sign-off: <span class="ok">APPROVED</span>
+        </div>
+      </div>
     </div>
   </div>
 </header>
 
 <main>
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 <section id="about">
   <div class="wrap">
     <span class="kicker rv">01 — Who I am</span>
     <h2 class="sec rv">Quality is the whole plan.</h2>
-    <div class="about-grid" style="margin-top:40px">
+    <p class="sec-intro rv">Not a phase at the end of the sprint — a discipline that starts with the first test case.</p>
+    <div class="about-grid">
       <aside class="id-card rv">
         <div class="avatar">HB</div>
         <h3>Haziq Ahmed Baig</h3>
         <p>Software QA Engineer</p>
-        <p>Islamabad, Pakistan</p>
-        <span class="badge-open">● Open to work</span>
+        <p>📍 Islamabad, Pakistan</p>
+        <span class="badge-open"><span class="dot-ok"></span>Open to work</span>
       </aside>
       <div class="about-body rv">
         <p>Software QA Engineer with 2+ years of experience delivering end-to-end quality assurance across web, mobile, and blockchain platforms. Proven track record of independently owning the full STLC — from test planning and execution to defect management and release sign-off — across 8+ live products in the Web3, DeFi, and AI sectors.</p>
@@ -238,38 +328,24 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" style="background:var(--bg2)">
+<!-- ================= SKILLS ================= -->
+<section id="skills" style="background:var(--paper2)">
   <div class="wrap">
     <span class="kicker rv">02 — Toolkit</span>
     <h2 class="sec rv">A practical toolkit.</h2>
     <p class="sec-intro rv">Built across web, mobile, and blockchain QA — spanning test design, API and security testing, performance, and Web3 validation.</p>
     <div class="skills">
-      <div class="skill rv"><h4><span class="sq"></span>QA Methodologies</h4><div class="chips"><span class="chip">STLC</span><span class="chip">SDLC</span><span class="chip">Agile / Scrum</span><span class="chip">Test Planning</span><span class="chip">Test Case Design</span><span class="chip">Bug Reporting</span></div></div>
-      <div class="skill rv"><h4><span class="sq"></span>Testing Types</h4><div class="chips"><span class="chip">Functional</span><span class="chip">Regression</span><span class="chip">Smoke / Sanity</span><span class="chip">Performance / Load</span><span class="chip">UI / UX</span><span class="chip">API</span><span class="chip">Security</span></div></div>
-      <div class="skill rv"><h4><span class="sq"></span>Testing Tools</h4><div class="chips"><span class="chip">Postman</span><span class="chip">TestRail</span><span class="chip">Jira</span><span class="chip">Trello</span><span class="chip">Asana</span><span class="chip">Chrome DevTools</span><span class="chip">Remix</span></div></div>
-      <div class="skill rv"><h4><span class="sq"></span>Blockchain / Web3</h4><div class="chips"><span class="chip">Smart Contract Testing</span><span class="chip">On-chain Flow Validation</span><span class="chip">Wallet & DeFi QA</span></div></div>
-      <div class="skill rv"><h4><span class="sq"></span>Languages & Data</h4><div class="chips"><span class="chip">SQL</span><span class="chip">JavaScript</span><span class="chip">React</span><span class="chip">C#</span></div></div>
-      <div class="skill rv"><h4><span class="sq"></span>AI Tools</h4><div class="chips"><span class="chip">Claude</span><span class="chip">Gemini</span><span class="chip">Cursor</span><span class="chip">AI-assisted test planning</span></div></div>
-    </div>
-
-    <div class="term rv" aria-hidden="true">
-      <div class="term-bar"><span>haziq@qa: release-signoff</span><span class="tag">PASSING</span></div>
-      <div class="term-body">
-<span class="cmd">$ npm run test:e2e -- --suite=release-signoff</span>
-  › Running 500 tests across web · mobile · chain
-<span class="ok">  ✓ auth / OTP expiry rejected .......... 84 passed</span>
-<span class="ok">  ✓ wallet / fund movement guarded ...... 122 passed</span>
-<span class="ok">  ✓ api / no data leakage ............... 96 passed</span>
-<span class="ok">  ✓ ui / figma parity 50+ screens ....... 184 passed</span>
-<span class="info">  ✦ 486 passed · 3 failed (triaged) · 11 skipped — 97% pass rate in 42s</span>
-<span class="cmd">$ echo "release sign-off: APPROVED ✓"</span>
-      </div>
+      <div class="skill rv"><h4><span class="num">[01]</span>QA Methodologies</h4><div class="chips"><span class="chip">STLC</span><span class="chip">SDLC</span><span class="chip">Agile / Scrum</span><span class="chip">Test Planning</span><span class="chip">Test Case Design</span><span class="chip">Bug Reporting</span></div></div>
+      <div class="skill rv"><h4><span class="num">[02]</span>Testing Types</h4><div class="chips"><span class="chip">Functional</span><span class="chip">Regression</span><span class="chip">Smoke / Sanity</span><span class="chip">Performance / Load</span><span class="chip">UI / UX</span><span class="chip">API</span><span class="chip">Security</span></div></div>
+      <div class="skill rv"><h4><span class="num">[03]</span>Testing Tools</h4><div class="chips"><span class="chip">Postman</span><span class="chip">TestRail</span><span class="chip">Jira</span><span class="chip">Trello</span><span class="chip">Asana</span><span class="chip">Chrome DevTools</span><span class="chip">Remix</span></div></div>
+      <div class="skill rv"><h4><span class="num">[04]</span>Blockchain / Web3</h4><div class="chips"><span class="chip">Smart Contract Testing</span><span class="chip">On-chain Flow Validation</span><span class="chip">Wallet & DeFi QA</span></div></div>
+      <div class="skill rv"><h4><span class="num">[05]</span>Languages & Data</h4><div class="chips"><span class="chip">SQL</span><span class="chip">JavaScript</span><span class="chip">React</span><span class="chip">C#</span></div></div>
+      <div class="skill rv"><h4><span class="num">[06]</span>AI Tools</h4><div class="chips"><span class="chip">Claude</span><span class="chip">Gemini</span><span class="chip">Cursor</span><span class="chip">AI-assisted test planning</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- WORK -->
+<!-- ================= WORK ================= -->
 <section id="work">
   <div class="wrap">
     <span class="kicker rv">03 — Selected work</span>
@@ -279,109 +355,111 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
     <article class="case rv">
       <div class="case-top">
         <div><span class="case-num">CASE 01</span><h3>Gems Trade — Centralized Crypto Exchange</h3></div>
-        <div class="case-tags"><span class="chip">TestRail</span><span class="chip">Jira</span><span class="chip">Postman</span><span class="chip">Web + Mobile</span></div>
+        <div class="case-tags"><span class="chip-dk">TestRail</span><span class="chip-dk">Jira</span><span class="chip-dk">Postman</span><span class="chip-dk">Web + Mobile</span></div>
       </div>
       <div class="case-body">
         <div><h5>Problem</h5><p>A crypto exchange spanning web and mobile needed financial-grade accuracy across live market data, trading, and wallet security — with full feature parity.</p></div>
         <div><h5>Approach</h5><p>Comprehensive strategy across all modules: validated real-time market data, limit/market orders, order book, PnL & history; tested multi-step wallet security flows (deposit, withdrawal, bulk sell-all).</p></div>
         <div><h5>Result</h5><p>Shipped with verified feature parity, validated financial data, and hardened wallet security flows.</p></div>
       </div>
-      <div class="case-metrics"><span class="metric">✓ 100+ screens parity</span><span class="metric">✓ financial data validated</span><span class="metric">✓ wallet flows hardened</span></div>
+      <div class="case-metrics"><span class="metric">100+ screens parity</span><span class="metric">financial data validated</span><span class="metric">wallet flows hardened</span></div>
     </article>
 
     <article class="case rv">
       <div class="case-top">
         <div><span class="case-num">CASE 02</span><h3>JONI — Personal AI Computer</h3></div>
-        <div class="case-tags"><span class="chip">TestRail</span><span class="chip">Jira</span><span class="chip">Postman</span><span class="chip">Figma</span></div>
+        <div class="case-tags"><span class="chip-dk">TestRail</span><span class="chip-dk">Jira</span><span class="chip-dk">Postman</span><span class="chip-dk">Figma</span></div>
       </div>
       <div class="case-body">
         <div><h5>Problem</h5><p>A personal AI platform with multi-chain payments, an AI agent marketplace, real-time chat orchestration, and an enterprise dashboard — needing QA leadership and design fidelity.</p></div>
         <div><h5>Approach</h5><p>QA Lead across 10+ modules. Validated multi-step auth (email, Apple, Google, OTP) and multi-chain payments (ETH, Solana, USDT, card); tested marketplace & multi-agent chat; cross-referenced 50+ Figma screens against live builds.</p></div>
         <div><h5>Result</h5><p>Led QA across the full surface, with end-to-end multi-chain payments validated and design fidelity locked.</p></div>
       </div>
-      <div class="case-metrics"><span class="metric">✓ QA Lead · 10+ modules</span><span class="metric">✓ 50+ Figma screens checked</span><span class="metric">✓ multi-chain payments E2E</span></div>
+      <div class="case-metrics"><span class="metric">QA Lead · 10+ modules</span><span class="metric">50+ Figma screens checked</span><span class="metric">multi-chain payments E2E</span></div>
     </article>
 
     <article class="case rv">
       <div class="case-top">
         <div><span class="case-num">CASE 03</span><h3>Flash Wallet — Lightweight Crypto Wallet</h3></div>
-        <div class="case-tags"><span class="chip">TestRail</span><span class="chip">Postman</span><span class="chip">Mobile</span><span class="chip">Security</span></div>
+        <div class="case-tags"><span class="chip-dk">TestRail</span><span class="chip-dk">Postman</span><span class="chip-dk">Mobile</span><span class="chip-dk">Security</span></div>
       </div>
       <div class="case-body">
         <div><h5>Problem</h5><p>A mobile crypto wallet where any API leak or mishandled fund-movement edge case would directly risk user funds.</p></div>
         <div><h5>Approach</h5><p>Owned the full QA lifecycle solo. Validated all wallet API endpoints (send/receive, balance, auth) for correct responses and zero leakage; security-first testing of edge cases.</p></div>
         <div><h5>Result</h5><p>Shipped with zero data leakage verified and fund-movement edge cases fully covered.</p></div>
       </div>
-      <div class="case-metrics"><span class="metric">✓ solo QA lifecycle</span><span class="metric">✓ zero data leakage</span><span class="metric">✓ edge cases covered</span></div>
+      <div class="case-metrics"><span class="metric">solo QA lifecycle</span><span class="metric">zero data leakage</span><span class="metric">edge cases covered</span></div>
     </article>
 
     <article class="case rv">
       <div class="case-top">
         <div><span class="case-num">CASE 04</span><h3>Tomi — Web3 Super App + AI Wallet</h3></div>
-        <div class="case-tags"><span class="chip">TestRail</span><span class="chip">Jira</span><span class="chip">Postman</span></div>
+        <div class="case-tags"><span class="chip-dk">TestRail</span><span class="chip-dk">Jira</span><span class="chip-dk">Postman</span></div>
       </div>
       <div class="case-body">
         <div><h5>Problem</h5><p>A Web3 super app combining AI wallet, crypto transactions, voice commands and decentralized storage — a wide surface needing consistent QA each sprint.</p></div>
         <div><h5>Approach</h5><p>End-to-end functional, regression, and UI/UX testing; API testing of wallet transactions, identity, and messaging; per-sprint smoke/sanity with triaged defects.</p></div>
         <div><h5>Result</h5><p>Consistent cross-feature QA with per-sprint smoke checks and clean defect triage.</p></div>
       </div>
-      <div class="case-metrics"><span class="metric">✓ cross-feature QA</span><span class="metric">✓ per-sprint smoke + triage</span><span class="metric">✓ wallet · identity · messaging</span></div>
+      <div class="case-metrics"><span class="metric">cross-feature QA</span><span class="metric">per-sprint smoke + triage</span><span class="metric">wallet · identity · messaging</span></div>
     </article>
 
     <article class="case rv">
       <div class="case-top">
         <div><span class="case-num">CASE 05</span><h3>DOP — Data Ownership Protocol Oracles</h3></div>
-        <div class="case-tags"><span class="chip">TestRail</span><span class="chip">Postman</span><span class="chip">Smart Contracts</span></div>
+        <div class="case-tags"><span class="chip-dk">TestRail</span><span class="chip-dk">Postman</span><span class="chip-dk">Smart Contracts</span></div>
       </div>
       <div class="case-body">
         <div><h5>Problem</h5><p>A blockchain oracle protocol where off-chain data must reach the chain with full integrity — and staking/dispute logic must survive protocol updates.</p></div>
         <div><h5>Approach</h5><p>Structured suite for data-feed accuracy, staking logic, and dispute resolution; tested oracle ingestion APIs confirming data is fetched, formatted, and delivered on-chain intact. Regression per update.</p></div>
         <div><h5>Result</h5><p>On-chain data integrity validated, staking + dispute logic regression-guarded.</p></div>
       </div>
-      <div class="case-metrics"><span class="metric">✓ on-chain integrity</span><span class="metric">✓ staking + disputes guarded</span><span class="metric">✓ per-update regression</span></div>
+      <div class="case-metrics"><span class="metric">on-chain integrity</span><span class="metric">staking + disputes guarded</span><span class="metric">per-update regression</span></div>
     </article>
 
     <article class="case rv">
       <div class="case-top">
         <div><span class="case-num">CASE 06</span><h3>Gems Rocks — Memecoin Launchpad</h3></div>
-        <div class="case-tags"><span class="chip">TestRail</span><span class="chip">Postman</span><span class="chip">Load Testing</span></div>
+        <div class="case-tags"><span class="chip-dk">TestRail</span><span class="chip-dk">Postman</span><span class="chip-dk">Load Testing</span></div>
       </div>
       <div class="case-body">
         <div><h5>Problem</h5><p>A memecoin launchpad where token launches drive sudden traffic spikes — bonding-curve and first-trade flows had to stay correct under concurrent load.</p></div>
         <div><h5>Approach</h5><p>Full suite covering token creation, bonding-curve mechanics, first-trade execution, wallet integration; load testing simulating high-traffic launches to expose bottlenecks.</p></div>
         <div><h5>Result</h5><p>Load-tested launches, with bonding-curve and first-trade flows verified under pressure.</p></div>
       </div>
-      <div class="case-metrics"><span class="metric">✓ load-tested launches</span><span class="metric">✓ bonding curve verified</span><span class="metric">✓ stable under load</span></div>
+      <div class="case-metrics"><span class="metric">load-tested launches</span><span class="metric">bonding curve verified</span><span class="metric">stable under load</span></div>
     </article>
   </div>
 </section>
 
-<!-- RESUME -->
+<!-- ================= RESUME ================= -->
 <section id="resume" class="resume-band">
   <div class="wrap">
     <span class="kicker rv">04 — Credentials</span>
-    <h2 class="sec rv">The paper trail.</h2>
+    <h2 class="sec rv" style="color:#fff">The paper trail.</h2>
+    <p class="sec-intro rv">Everything you need to move forward — current and downloadable.</p>
     <div class="timeline rv">
-      <div class="tl"><b>Software QA Engineer — Quecko Inc.</b><span>Islamabad · Aug 2024 → Present</span></div>
-      <div class="tl"><b>Shopify Developer & QA Intern — OptiExperts</b><span>New City, Pakistan · Dec 2023 → Feb 2024</span></div>
+      <div class="tl"><b>Software QA Engineer — Quecko Inc.</b><span class="org">Islamabad, Pakistan</span><span class="when">Aug 2024 → Present</span></div>
+      <div class="tl"><b>Shopify Developer & QA Intern — OptiExperts</b><span class="org">New City, Pakistan</span><span class="when">Dec 2023 → Feb 2024</span></div>
+      <div class="tl"><b>BS Computer Science — UET Taxila</b><span class="org">CGPA 3.34 / 4.00</span><span class="when">2019 → 2023</span></div>
     </div>
     <div class="btns rv">
-      <a class="btn btn-main" href="resume.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
-      <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">View online</a>
+      <a class="btn btn-cy" href="resume.pdf" target="_blank" rel="noopener">↓ Download CV (PDF)</a>
+      <a class="btn btn-dark" href="resume.pdf" target="_blank" rel="noopener">View online →</a>
     </div>
     <div class="certs rv">
-      <span class="cert">🏅 C# for .NET Developers — Coursera</span>
-      <span class="cert">🏅 Programming with JavaScript — Coursera</span>
-      <span class="cert">🏅 Intro to Front-End Development — Coursera</span>
+      <span class="cert"><b>◆</b> C# for .NET Developers — Coursera</span>
+      <span class="cert"><b>◆</b> Programming with JavaScript — Coursera</span>
+      <span class="cert"><b>◆</b> Intro to Front-End Development — Coursera</span>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 <section id="contact">
   <div class="wrap">
     <span class="kicker rv" style="text-align:center">05 — Get in touch</span>
-    <p class="big-cta rv">Let's ship something<br/>that <span class="a">doesn't break.</span></p>
+    <p class="big-cta rv">Let's ship something<br/>that <span class="cy">doesn't break.</span></p>
     <div class="contact-grid">
       <aside class="rv">
         <a class="clink" href="mailto:haziqahmed31971@gmail.com"><small>Email</small><b>haziqahmed31971@gmail.com</b></a>
@@ -390,18 +468,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
         <div class="clink"><small>Location</small><b>Islamabad, Pakistan</b></div>
       </aside>
       <div class="contact-form rv">
-        <!-- Email via FormSubmit.co AJAX — no backend, no API key.
-             NOTE: first real submission triggers a one-time activation email
-             to haziqahmed31971@gmail.com — click it once and it works forever. -->
         <form id="contactForm" novalidate action="https://formsubmit.co/ajax/haziqahmed31971@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New portfolio message — haziq.qa" />
+          <input type="hidden" name="_subject" value="New portfolio message — Haziq Ahmed Baig" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
           <div><label for="cf-name">Name</label><input type="text" id="cf-name" name="name" autocomplete="name" required /></div>
           <div><label for="cf-email">Email</label><input type="email" id="cf-email" name="email" autocomplete="email" required /></div>
           <div><label for="cf-message">Message</label><textarea id="cf-message" name="message" rows="5" required></textarea></div>
           <div class="hp" aria-hidden="true"><label for="cf-company">Company</label><input type="text" id="cf-company" name="_honey" tabindex="-1" autocomplete="off" /></div>
-          <button type="submit" class="btn btn-main" style="justify-content:center;width:100%">Send message</button>
+          <button type="submit" class="btn btn-submit">Send message →</button>
           <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -412,8 +487,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 
 <footer>
   <div class="foot">
-    <span class="brand"><span class="dot" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--accent);margin-right:8px"></span><b>Haziq Ahmed Baig</b></span>
-    <p>Software QA Engineer · Web · Mobile · Blockchain</p>
+    <span class="brand"><span class="brand-mark" style="display:inline-grid;width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--cyan),var(--blue));place-items:center;color:var(--navy);font-weight:800;font-size:.75rem;margin-right:10px">HB</span><b>Haziq Ahmed Baig</b></span>
+    <div class="links"><a href="#about">About</a><a href="#work">Work</a><a href="#resume">Resume</a><a href="#contact">Contact</a></div>
     <p>© 2026 — Built with care. And tested. Twice.</p>
   </div>
 </footer>
@@ -473,10 +548,10 @@ form.addEventListener('submit',async e=>{
   try{
     const res=await fetch(form.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
       body:JSON.stringify({name:form.name.value,email:form.email.value,message:form.message.value,
-        _subject:'New portfolio message — haziq.qa',_template:'table',_captcha:'false'})});
+        _subject:'New portfolio message — Haziq Ahmed Baig',_template:'table',_captcha:'false'})});
     const data=await res.json().catch(()=>({}));
     if(!res.ok||data.success==='false'||data.success===false)throw 0;
-    status.textContent='Message delivered ✓ — I reply within one business day.';status.style.color='var(--ok)';form.reset();
+    status.textContent='Message delivered ✓ — I reply within one business day.';status.style.color='var(--ok-deep)';form.reset();
   }catch{status.textContent='Failed — email me directly at haziqahmed31971@gmail.com';status.style.color='#DC2626'}
   btn.disabled=false;
 });

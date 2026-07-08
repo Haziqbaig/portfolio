@@ -2,6 +2,6 @@
 
 Redesigned portfolio — aurora gradients, custom cursor, typewriter terminal, scroll reveals.
 
-**Live:** https://haziqbaig.github.io/haziq-qa-portfolio-v2/
+**Live:** https://haziqbaig.github.io/portfolio/
 
 Software QA Engineer · Web · Mobile · Blockchain · Islamabad, Pakistan

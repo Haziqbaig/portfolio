@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Haziq Ahmed Baig — QA Engineer | Web · Mobile · Blockchain</title>
+<meta name="description" content="Software QA Engineer with 2+ years delivering end-to-end QA across web, mobile, and blockchain — Web3, DeFi & AI products." />
+<meta name="author" content="Haziq Ahmed Baig" />
+<meta name="theme-color" content="#050508" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Haziq Ahmed Baig — Software QA Engineer" />
+<meta property="og:description" content="End-to-end QA across web, mobile, and blockchain — Web3, DeFi & AI products." />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#050508;
+  --bg2:#0a0a12;
+  --panel:rgba(255,255,255,.04);
+  --line:rgba(255,255,255,.09);
+  --txt:#e9e9f2;
+  --muted:#8b8b9e;
+  --c1:#7c3aed;
+  --c2:#06b6d4;
+  --c3:#f0abfc;
+  --grad:linear-gradient(120deg,#7c3aed,#06b6d4 55%,#f0abfc);
+  --radius:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--txt);
+  font-family:'Space Grotesk',sans-serif;
+  overflow-x:hidden;line-height:1.6;
+  cursor:none;
+}
+::selection{background:var(--c1);color:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+
+/* ---------- custom cursor ---------- */
+.cursor{position:fixed;top:0;left:0;width:14px;height:14px;border-radius:50%;background:var(--c2);
+  pointer-events:none;z-index:9999;mix-blend-mode:difference;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s}
+.cursor.grow{width:52px;height:52px;background:#fff}
+.cursor-glow{position:fixed;top:0;left:0;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:0;
+  background:radial-gradient(circle,rgba(124,58,237,.14),transparent 65%);transform:translate(-50%,-50%)}
+@media (hover:none){body{cursor:auto}.cursor,.cursor-glow{display:none}}
+
+/* ---------- aurora bg ---------- */
+.aurora{position:fixed;inset:0;z-index:-2;overflow:hidden;background:var(--bg)}
+.aurora span{position:absolute;border-radius:50%;filter:blur(110px);opacity:.45;animation:float 18s ease-in-out infinite alternate}
+.aurora span:nth-child(1){width:55vw;height:55vw;background:#3b0764;top:-18%;left:-12%}
+.aurora span:nth-child(2){width:45vw;height:45vw;background:#083344;bottom:-15%;right:-10%;animation-delay:-6s}
+.aurora span:nth-child(3){width:30vw;height:30vw;background:#4a044e;top:35%;left:55%;animation-delay:-12s;opacity:.3}
+@keyframes float{from{transform:translate(0,0) scale(1)}to{transform:translate(6vw,-4vw) scale(1.15)}}
+.noise{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+
+/* ---------- layout helpers ---------- */
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+section{padding:110px 0;position:relative}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;color:var(--c2);display:block;margin-bottom:14px}
+h2.sec{font-family:'Unbounded',sans-serif;font-size:clamp(1.8rem,4.5vw,3rem);font-weight:800;line-height:1.1;margin-bottom:20px}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(36px);transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:100;
+  display:flex;align-items:center;gap:6px;padding:8px 10px;border-radius:99px;
+  background:rgba(10,10,18,.55);backdrop-filter:blur(18px);border:1px solid var(--line)}
+nav a{padding:8px 16px;border-radius:99px;font-size:.88rem;color:var(--muted);transition:.25s}
+nav a:hover,nav a.active{color:#fff;background:rgba(255,255,255,.08)}
+nav .cta{background:var(--grad);color:#fff;font-weight:600}
+nav .cta:hover{filter:brightness(1.15)}
+@media(max-width:720px){nav a:not(.cta):not(:first-child){display:none}}
+
+/* ---------- hero ---------- */
+.hero{min-height:100svh;display:flex;align-items:center;padding-top:120px}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:.8rem;
+  padding:8px 18px;border-radius:99px;border:1px solid var(--line);background:var(--panel);color:var(--c3);margin-bottom:28px}
+.pulse{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}}
+h1{font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(2.4rem,7vw,5.2rem);line-height:1.04;letter-spacing:-.01em}
+.hero-sub{margin:28px 0 8px;font-size:clamp(1rem,2vw,1.25rem);color:var(--muted);max-width:640px}
+.type-line{font-family:'JetBrains Mono',monospace;color:var(--c2);font-size:clamp(.9rem,1.8vw,1.05rem);min-height:1.6em;margin-bottom:36px}
+.type-line::after{content:'▌';animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:99px;font-weight:600;font-size:.95rem;transition:.3s;border:1px solid transparent}
+.btn-main{background:var(--grad);color:#fff;box-shadow:0 8px 30px rgba(124,58,237,.35)}
+.btn-main:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(124,58,237,.5)}
+.btn-ghost{border-color:var(--line);background:var(--panel);color:var(--txt)}
+.btn-ghost:hover{border-color:var(--c2);color:var(--c2);transform:translateY(-3px)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:64px;max-width:760px}
+.stat{padding:20px 22px;border-radius:var(--radius);border:1px solid var(--line);background:var(--panel);backdrop-filter:blur(8px)}
+.stat b{display:block;font-family:'Unbounded',sans-serif;font-size:1.7rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:.82rem;color:var(--muted)}
+
+/* ---------- marquee ---------- */
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;background:rgba(255,255,255,.02)}
+.marquee-track{display:flex;gap:48px;width:max-content;animation:scroll 28s linear infinite;font-family:'JetBrains Mono',monospace;font-size:.9rem;color:var(--muted);white-space:nowrap}
+.marquee-track i{color:var(--c1);font-style:normal}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:44px;align-items:start}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr}}
+.id-card{border-radius:var(--radius);border:1px solid var(--line);background:linear-gradient(160deg,rgba(124,58,237,.14),rgba(6,182,212,.07));
+  padding:34px;position:relative;overflow:hidden}
+.id-card::before{content:'';position:absolute;inset:-1px;border-radius:var(--radius);padding:1px;
+  background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.5}
+.avatar{width:84px;height:84px;border-radius:24px;background:var(--grad);display:grid;place-items:center;
+  font-family:'Unbounded',sans-serif;font-weight:800;font-size:1.6rem;color:#fff;margin-bottom:20px}
+.id-card h3{font-family:'Unbounded',sans-serif;font-size:1.15rem}
+.id-card p{color:var(--muted);font-size:.92rem;margin-top:4px}
+.badge-open{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:7px 14px;border-radius:99px;
+  background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);color:#4ade80;font-size:.82rem;font-family:'JetBrains Mono',monospace}
+.about-body p{color:#c6c6d4;margin-bottom:18px;font-size:1.02rem}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:56px}
+.pillar{padding:26px;border-radius:var(--radius);border:1px solid var(--line);background:var(--panel);transition:.35s}
+.pillar:hover{transform:translateY(-6px);border-color:rgba(124,58,237,.5);background:rgba(124,58,237,.07)}
+.pillar .ic{font-size:1.5rem;margin-bottom:12px;display:block}
+.pillar h4{font-size:1rem;margin-bottom:8px}
+.pillar p{font-size:.88rem;color:var(--muted)}
+
+/* ---------- skills ---------- */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.skill{padding:28px;border-radius:var(--radius);border:1px solid var(--line);background:var(--panel);transition:.35s;position:relative;overflow:hidden}
+.skill:hover{border-color:rgba(6,182,212,.5);transform:translateY(-5px)}
+.skill h4{font-family:'Unbounded',sans-serif;font-size:.95rem;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.skill h4 em{font-style:normal;font-size:1.2rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:'JetBrains Mono',monospace;font-size:.75rem;padding:6px 13px;border-radius:99px;
+  border:1px solid var(--line);background:rgba(255,255,255,.03);color:#c6c6d4;transition:.25s}
+.chip:hover{border-color:var(--c1);color:#fff;background:rgba(124,58,237,.15)}
+
+/* ---------- cases ---------- */
+.case{border:1px solid var(--line);border-radius:calc(var(--radius) + 6px);background:var(--panel);
+  padding:38px;margin-bottom:26px;transition:.4s;position:relative;overflow:hidden}
+.case::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.case:hover::after{transform:scaleX(1)}
+.case:hover{border-color:rgba(124,58,237,.45);background:rgba(255,255,255,.055)}
+.case-top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+.case-num{font-family:'JetBrains Mono',monospace;color:var(--c2);font-size:.8rem;letter-spacing:.2em}
+.case h3{font-family:'Unbounded',sans-serif;font-size:clamp(1.05rem,2.4vw,1.4rem);margin-top:6px;line-height:1.3}
+.case-body{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin:22px 0}
+.case-body h5{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--c3);margin-bottom:8px}
+.case-body p{font-size:.93rem;color:#b9b9c9}
+.case-metrics{display:flex;gap:12px;flex-wrap:wrap}
+.metric{font-family:'JetBrains Mono',monospace;font-size:.78rem;padding:8px 16px;border-radius:99px;
+  background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.25);color:#67e8f9}
+
+/* ---------- terminal ---------- */
+.term{border-radius:var(--radius);border:1px solid var(--line);background:#0b0b14;overflow:hidden;margin-top:60px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.term-bar{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.03)}
+.term-bar i{width:12px;height:12px;border-radius:50%;font-style:normal}
+.term-bar i:nth-child(1){background:#ff5f57}.term-bar i:nth-child(2){background:#febc2e}.term-bar i:nth-child(3){background:#28c840}
+.term-bar span{margin-left:10px;font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--muted)}
+.term-body{padding:24px;font-family:'JetBrains Mono',monospace;font-size:.86rem;line-height:1.9;color:#a3e635;overflow-x:auto}
+.term-body .cmd{color:#e9e9f2}.term-body .dim{color:var(--muted)}.term-body .ok{color:#4ade80}.term-body .info{color:#67e8f9}
+
+/* ---------- resume ---------- */
+.timeline{border-left:2px solid rgba(124,58,237,.4);margin:40px 0;padding-left:32px}
+.tl{position:relative;padding-bottom:34px}
+.tl::before{content:'';position:absolute;left:-41px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--grad);box-shadow:0 0 20px rgba(124,58,237,.7)}
+.tl b{font-size:1.08rem;display:block}
+.tl span{color:var(--muted);font-size:.9rem}
+.certs{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:40px}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+.clink{display:flex;align-items:center;gap:16px;padding:20px;border-radius:var(--radius);border:1px solid var(--line);background:var(--panel);margin-bottom:14px;transition:.3s}
+.clink:hover{border-color:var(--c2);transform:translateX(6px)}
+.clink .ci{font-size:1.3rem}
+.clink small{display:block;color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;font-family:'JetBrains Mono',monospace}
+.clink b{font-size:.95rem;font-weight:500}
+form{display:flex;flex-direction:column;gap:16px}
+label{font-size:.85rem;color:var(--muted);font-family:'JetBrains Mono',monospace}
+input,textarea{width:100%;padding:15px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03);
+  color:var(--txt);font-family:'Space Grotesk',sans-serif;font-size:.95rem;transition:.3s;margin-top:6px}
+input:focus,textarea:focus{outline:none;border-color:var(--c1);background:rgba(124,58,237,.06);box-shadow:0 0 0 4px rgba(124,58,237,.12)}
+.hp{position:absolute;left:-9999px}
+.form-status{font-family:'JetBrains Mono',monospace;font-size:.85rem;min-height:1.4em}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:44px 0;text-align:center;color:var(--muted);font-size:.88rem}
+footer .grad-text{font-family:'Unbounded',sans-serif;font-weight:600}
+.big-cta{font-family:'Unbounded',sans-serif;font-size:clamp(2rem,6vw,4rem);font-weight:800;text-align:center;line-height:1.15;margin-bottom:36px}
+</style>
+</head>
+<body>
+
+<div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="noise" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<nav aria-label="Primary">
+  <a href="#home" class="active">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#work">Work</a>
+  <a href="#resume">Resume</a>
+  <a href="#contact" class="cta">Hire me</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="wrap">
+    <span class="hero-tag rv"><span class="pulse"></span> OPEN TO WORK · QA ENGINEER</span>
+    <h1 class="rv">I break software<br/>so <span class="grad-text">users never do.</span></h1>
+    <p class="hero-sub rv">Haziq Ahmed Baig — Software QA Engineer owning the full STLC across web, mobile & blockchain. 8+ live products shipped in Web3, DeFi and AI.</p>
+    <p class="type-line rv" id="typeLine"></p>
+    <div class="btns rv">
+      <a class="btn btn-main" href="#work">View case studies ↘</a>
+      <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">⬇ Download CV</a>
+    </div>
+    <div class="stats rv">
+      <div class="stat"><b data-count="2" data-suffix="+">0</b><span>years in QA</span></div>
+      <div class="stat"><b data-count="8" data-suffix="+">0</b><span>live products shipped</span></div>
+      <div class="stat"><b data-count="500" data-suffix="+">0</b><span>test cases authored</span></div>
+      <div class="stat"><b>Full STLC</b><span>ownership, plan → sign-off</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>POSTMAN <i>◆</i></span><span>TESTRAIL <i>◆</i></span><span>JIRA <i>◆</i></span><span>API TESTING <i>◆</i></span>
+    <span>SMART CONTRACTS <i>◆</i></span><span>LOAD TESTING <i>◆</i></span><span>WEB3 / DEFI <i>◆</i></span><span>REGRESSION <i>◆</i></span>
+    <span>POSTMAN <i>◆</i></span><span>TESTRAIL <i>◆</i></span><span>JIRA <i>◆</i></span><span>API TESTING <i>◆</i></span>
+    <span>SMART CONTRACTS <i>◆</i></span><span>LOAD TESTING <i>◆</i></span><span>WEB3 / DEFI <i>◆</i></span><span>REGRESSION <i>◆</i></span>
+  </div>
+</div>
+
+<main>
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <span class="kicker rv">01 — WHO I AM</span>
+    <h2 class="sec rv">Quality isn't a phase.<br/><span class="grad-text">It's the whole plan.</span></h2>
+    <div class="about-grid">
+      <aside class="id-card rv">
+        <div class="avatar">HB</div>
+        <h3>Haziq Ahmed Baig</h3>
+        <p>Software QA Engineer</p>
+        <p>📍 Islamabad, Pakistan</p>
+        <span class="badge-open"><span class="pulse"></span> open_to_work = true</span>
+      </aside>
+      <div class="about-body rv">
+        <p>Software QA Engineer with 2+ years of experience delivering end-to-end quality assurance across web, mobile, and blockchain platforms. Proven track record of independently owning the full STLC — from test planning and execution to defect management and release sign-off — across 8+ live products in the Web3, DeFi, and AI sectors.</p>
+        <p>Experienced in API testing, performance testing, and cross-platform validation, with a dual background in project management that enables close collaboration with developers, designers, and stakeholders to ship secure, high-quality software on schedule.</p>
+        <p>That project-management foundation is what keeps quality moving across a team — I translate risk into clear test plans, keep defects visible and triaged, and give stakeholders a release sign-off they can trust.</p>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar rv"><span class="ic">🔍</span><h4>Attention to Detail</h4><p>I probe the security and edge-case flows — fund movement, auth, on-chain integrity — that break trust if they fail.</p></div>
+      <div class="pillar rv"><span class="ic">🛡️</span><h4>Quality Mindset</h4><p>I own the full STLC, so quality is planned in from the first test case — not bolted on before release.</p></div>
+      <div class="pillar rv"><span class="ic">⚙️</span><h4>Technical Depth</h4><p>API contract testing in Postman, smart-contract and on-chain flow validation, and performance testing under load.</p></div>
+      <div class="pillar rv"><span class="ic">✅</span><h4>Reliability</h4><p>Clear test plans in TestRail, triaged defects in Jira, and a release sign-off teams trust to ship.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <span class="kicker rv">02 — TOOLKIT</span>
+    <h2 class="sec rv">Weapons of <span class="grad-text">mass detection.</span></h2>
+    <div class="skills">
+      <div class="skill rv"><h4><em>📋</em> QA Methodologies</h4><div class="chips"><span class="chip">STLC</span><span class="chip">SDLC</span><span class="chip">Agile / Scrum</span><span class="chip">Test Planning</span><span class="chip">Test Case Design</span><span class="chip">Bug Reporting</span></div></div>
+      <div class="skill rv"><h4><em>🧪</em> Testing Types</h4><div class="chips"><span class="chip">Functional</span><span class="chip">Regression</span><span class="chip">Smoke / Sanity</span><span class="chip">Performance / Load</span><span class="chip">UI / UX</span><span class="chip">API</span><span class="chip">Security</span></div></div>
+      <div class="skill rv"><h4><em>🔧</em> Testing Tools</h4><div class="chips"><span class="chip">Postman</span><span class="chip">TestRail</span><span class="chip">Jira</span><span class="chip">Trello</span><span class="chip">Asana</span><span class="chip">Chrome DevTools</span><span class="chip">Remix</span></div></div>
+      <div class="skill rv"><h4><em>🔗</em> Blockchain / Web3</h4><div class="chips"><span class="chip">Smart Contract Testing</span><span class="chip">On-chain Flow Validation</span><span class="chip">Wallet & DeFi QA</span></div></div>
+      <div class="skill rv"><h4><em>💻</em> Languages & Data</h4><div class="chips"><span class="chip">SQL</span><span class="chip">JavaScript</span><span class="chip">React</span><span class="chip">C#</span></div></div>
+      <div class="skill rv"><h4><em>✨</em> AI Tools</h4><div class="chips"><span class="chip">Claude</span><span class="chip">Gemini</span><span class="chip">Cursor</span><span class="chip">AI-assisted test planning</span></div></div>
+    </div>
+
+    <div class="term rv" aria-hidden="true">
+      <div class="term-bar"><i></i><i></i><i></i><span>haziq@qa — test-run</span></div>
+      <div class="term-body">
+<span class="cmd">$ npm run test:e2e -- --suite=release-signoff</span>
+<span class="dim">  › Running 500 tests across web · mobile · chain</span>
+<span class="ok">  ✓ auth / OTP expiry rejected .......... 84 passed</span>
+<span class="ok">  ✓ wallet / fund movement guarded ...... 122 passed</span>
+<span class="ok">  ✓ api / no data leakage ............... 96 passed</span>
+<span class="ok">  ✓ ui / figma parity 50+ screens ....... 184 passed</span>
+<span class="info">  ✦ 486 passed · 3 failed (triaged) · 11 skipped — 97% pass rate in 42s</span>
+<span class="cmd">$ echo "release sign-off: APPROVED ✅"</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <span class="kicker rv">03 — SELECTED WORK</span>
+    <h2 class="sec rv">Case studies from <span class="grad-text">live products.</span></h2>
+
+    <article class="case rv">
+      <div class="case-top"><div><span class="case-num">CASE 01</span><h3>Gems Trade — Centralized Crypto Exchange</h3></div>
+        <div class="chips"><span class="chip">TestRail</span><span class="chip">Jira</span><span class="chip">Postman</span><span class="chip">Web + Mobile</span></div></div>
+      <div class="case-body">
+        <div><h5>Problem</h5><p>A crypto exchange spanning web and mobile needed financial-grade accuracy across live market data, trading, and wallet security — with full feature parity.</p></div>
+        <div><h5>Approach</h5><p>Comprehensive strategy across all modules: validated real-time market data, limit/market orders, order book, PnL & history; tested multi-step wallet security flows (deposit, withdrawal, bulk sell-all).</p></div>
+        <div><h5>Result</h5><p>Shipped with verified feature parity, validated financial data, and hardened wallet security flows.</p></div>
+      </div>
+      <div class="case-metrics"><span class="metric">100+ screens parity ✓</span><span class="metric">financial data validated ✓</span><span class="metric">wallet flows hardened ✓</span></div>
+    </article>
+
+    <article class="case rv">
+      <div class="case-top"><div><span class="case-num">CASE 02</span><h3>JONI — Personal AI Computer</h3></div>
+        <div class="chips"><span class="chip">TestRail</span><span class="chip">Jira</span><span class="chip">Postman</span><span class="chip">Figma</span></div></div>
+      <div class="case-body">
+        <div><h5>Problem</h5><p>A personal AI platform with multi-chain payments, an AI agent marketplace, real-time chat orchestration, and an enterprise dashboard — needing QA leadership and design fidelity.</p></div>
+        <div><h5>Approach</h5><p>QA Lead across 10+ modules. Validated multi-step auth (email, Apple, Google, OTP) and multi-chain payments (ETH, Solana, USDT, card); tested marketplace & multi-agent chat; cross-referenced 50+ Figma screens against live builds.</p></div>
+        <div><h5>Result</h5><p>Led QA across the full surface, with end-to-end multi-chain payments validated and design fidelity locked.</p></div>
+      </div>
+      <div class="case-metrics"><span class="metric">QA Lead · 10+ modules</span><span class="metric">50+ Figma screens checked</span><span class="metric">multi-chain payments E2E ✓</span></div>
+    </article>
+
+    <article class="case rv">
+      <div class="case-top"><div><span class="case-num">CASE 03</span><h3>Flash Wallet — Lightweight Crypto Wallet</h3></div>
+        <div class="chips"><span class="chip">TestRail</span><span class="chip">Postman</span><span class="chip">Mobile</span><span class="chip">Security</span></div></div>
+      <div class="case-body">
+        <div><h5>Problem</h5><p>A mobile crypto wallet where any API leak or mishandled fund-movement edge case would directly risk user funds.</p></div>
+        <div><h5>Approach</h5><p>Owned the full QA lifecycle solo. Validated all wallet API endpoints (send/receive, balance, auth) for correct responses and zero leakage; security-first testing of edge cases.</p></div>
+        <div><h5>Result</h5><p>Shipped with zero data leakage verified and fund-movement edge cases fully covered.</p></div>
+      </div>
+      <div class="case-metrics"><span class="metric">solo QA lifecycle</span><span class="metric">zero data leakage ✓</span><span class="metric">edge cases covered ✓</span></div>
+    </article>
+
+    <article class="case rv">
+      <div class="case-top"><div><span class="case-num">CASE 04</span><h3>Tomi — Web3 Super App + AI Wallet</h3></div>
+        <div class="chips"><span class="chip">TestRail</span><span class="chip">Jira</span><span class="chip">Postman</span></div></div>
+      <div class="case-body">
+        <div><h5>Problem</h5><p>A Web3 super app combining AI wallet, crypto transactions, voice commands and decentralized storage — a wide surface needing consistent QA each sprint.</p></div>
+        <div><h5>Approach</h5><p>End-to-end functional, regression, and UI/UX testing; API testing of wallet transactions, identity, and messaging; per-sprint smoke/sanity with triaged defects.</p></div>
+        <div><h5>Result</h5><p>Consistent cross-feature QA with per-sprint smoke checks and clean defect triage.</p></div>
+      </div>
+      <div class="case-metrics"><span class="metric">cross-feature QA</span><span class="metric">per-sprint smoke + triage</span><span class="metric">wallet · identity · messaging APIs</span></div>
+    </article>
+
+    <article class="case rv">
+      <div class="case-top"><div><span class="case-num">CASE 05</span><h3>DOP — Data Ownership Protocol Oracles</h3></div>
+        <div class="chips"><span class="chip">TestRail</span><span class="chip">Postman</span><span class="chip">Smart Contracts</span></div></div>
+      <div class="case-body">
+        <div><h5>Problem</h5><p>A blockchain oracle protocol where off-chain data must reach the chain with full integrity — and staking/dispute logic must survive protocol updates.</p></div>
+        <div><h5>Approach</h5><p>Structured suite for data-feed accuracy, staking logic, and dispute resolution; tested oracle ingestion APIs confirming data is fetched, formatted, and delivered on-chain intact. Regression per update.</p></div>
+        <div><h5>Result</h5><p>On-chain data integrity validated, staking + dispute logic regression-guarded.</p></div>
+      </div>
+      <div class="case-metrics"><span class="metric">on-chain integrity ✓</span><span class="metric">staking + disputes guarded</span><span class="metric">per-update regression</span></div>
+    </article>
+
+    <article class="case rv">
+      <div class="case-top"><div><span class="case-num">CASE 06</span><h3>Gems Rocks — Memecoin Launchpad</h3></div>
+        <div class="chips"><span class="chip">TestRail</span><span class="chip">Postman</span><span class="chip">Load Testing</span></div></div>
+      <div class="case-body">
+        <div><h5>Problem</h5><p>A memecoin launchpad where token launches drive sudden traffic spikes — bonding-curve and first-trade flows had to stay correct under concurrent load.</p></div>
+        <div><h5>Approach</h5><p>Full suite covering token creation, bonding-curve mechanics, first-trade execution, wallet integration; load testing simulating high-traffic launches to expose bottlenecks.</p></div>
+        <div><h5>Result</h5><p>Load-tested launches, with bonding-curve and first-trade flows verified under pressure.</p></div>
+      </div>
+      <div class="case-metrics"><span class="metric">load-tested launches</span><span class="metric">bonding curve verified ✓</span><span class="metric">stable under load ✓</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume">
+  <div class="wrap">
+    <span class="kicker rv">04 — CREDENTIALS</span>
+    <h2 class="sec rv">The <span class="grad-text">paper trail.</span></h2>
+    <div class="timeline rv">
+      <div class="tl"><b>Software QA Engineer — Quecko Inc.</b><span>Islamabad · Aug 2024 – Present</span></div>
+      <div class="tl"><b>Shopify Developer & QA Intern — OptiExperts</b><span>New City, Pakistan · Dec 2023 – Feb 2024</span></div>
+    </div>
+    <div class="btns rv">
+      <a class="btn btn-main" href="resume.pdf" target="_blank" rel="noopener">⬇ Download CV (PDF)</a>
+      <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">View online ↗</a>
+    </div>
+    <div class="certs rv">
+      <span class="chip">🏅 C# for .NET Developers (Coursera)</span>
+      <span class="chip">🏅 Programming with JavaScript (Coursera)</span>
+      <span class="chip">🏅 Intro to Front-End Development (Coursera)</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <span class="kicker rv" style="text-align:center;display:block">05 — GET IN TOUCH</span>
+    <p class="big-cta rv">Let's ship something<br/><span class="grad-text">that doesn't break.</span></p>
+    <div class="contact-grid">
+      <aside class="rv">
+        <a class="clink" href="mailto:haziqahmed31971@gmail.com"><span class="ci">✉️</span><span><small>Email</small><b>haziqahmed31971@gmail.com</b></span></a>
+        <a class="clink" href="tel:+923051999984"><span class="ci">📞</span><span><small>Phone</small><b>+92 305 1999984</b></span></a>
+        <a class="clink" href="https://linkedin.com/in/haziqbaig31" target="_blank" rel="noopener"><span class="ci">💼</span><span><small>LinkedIn</small><b>linkedin.com/in/haziqbaig31</b></span></a>
+        <div class="clink"><span class="ci">📍</span><span><small>Location</small><b>Islamabad, Pakistan</b></span></div>
+      </aside>
+      <form class="rv" id="contactForm" novalidate action="https://haziq-qa-contact-api-kksr.onrender.com/api/contact" method="POST">
+        <div><label for="cf-name">// your name</label><input type="text" id="cf-name" name="name" autocomplete="name" required /></div>
+        <div><label for="cf-email">// your email</label><input type="email" id="cf-email" name="email" autocomplete="email" required /></div>
+        <div><label for="cf-message">// the mission</label><textarea id="cf-message" name="message" rows="5" required></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cf-company">Company</label><input type="text" id="cf-company" name="company" tabindex="-1" autocomplete="off" /></div>
+        <button type="submit" class="btn btn-main" style="justify-content:center">Send message 🚀</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><span class="grad-text">HAZIQ AHMED BAIG</span></p>
+    <p style="margin-top:8px">Software QA Engineer · Web · Mobile · Blockchain</p>
+    <p style="margin-top:8px">© 2026 — Built with care. And tested. Twice.</p>
+  </div>
+</footer>
+
+<script>
+// ---------- custom cursor ----------
+const cur=document.querySelector('.cursor'),glow=document.querySelector('.cursor-glow');
+let mx=innerWidth/2,my=innerHeight/2,gx=mx,gy=my;
+addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function lerp(){gx+=(mx-gx)*.08;gy+=(my-gy)*.08;glow.style.left=gx+'px';glow.style.top=gy+'px';requestAnimationFrame(lerp)})();
+document.querySelectorAll('a,button,.chip,.skill,.case').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cur.classList.add('grow'));
+  el.addEventListener('mouseleave',()=>cur.classList.remove('grow'));
+});
+
+// ---------- typewriter ----------
+const lines=['> validating fund-movement edge cases…','> asserting zero data leakage on wallet APIs…','> cross-checking 50+ Figma screens vs live build…','> load-testing memecoin launch spikes…','> release sign-off: APPROVED ✅'];
+const tl=document.getElementById('typeLine');let li=0,ci=0,del=false;
+(function type(){
+  const l=lines[li];
+  tl.textContent=l.slice(0,ci);
+  if(!del&&ci<l.length){ci++;setTimeout(type,38)}
+  else if(!del){del=true;setTimeout(type,1600)}
+  else if(ci>0){ci--;setTimeout(type,14)}
+  else{del=false;li=(li+1)%lines.length;setTimeout(type,300)}
+})();
+
+// ---------- reveal on scroll ----------
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// ---------- counters ----------
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;cio.unobserve(e.target);
+  const el=e.target,end=+el.dataset.count,suf=el.dataset.suffix||'';let t0=null;
+  (function step(ts){if(!t0)t0=ts;const p=Math.min((ts-t0)/1200,1);el.textContent=Math.round(end*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(step)})(performance.now());
+}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+// ---------- nav active ----------
+const secs=[...document.querySelectorAll('section[id],header[id]')];
+const navLinks=[...document.querySelectorAll('nav a')];
+addEventListener('scroll',()=>{
+  const y=scrollY+innerHeight/3;
+  let cId='home';
+  secs.forEach(s=>{if(s.offsetTop<=y)cId=s.id});
+  navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cId));
+},{passive:true});
+
+// ---------- contact form ----------
+const form=document.getElementById('contactForm'),status=document.getElementById('formStatus');
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(form.company.value)return;
+  const btn=form.querySelector('button[type=submit]');
+  btn.disabled=true;status.textContent='> sending…';status.style.color='#67e8f9';
+  try{
+    const res=await fetch(form.action,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name:form.name.value,email:form.email.value,message:form.message.value})});
+    if(!res.ok)throw 0;
+    status.textContent='> message delivered ✅ — I reply within one business day.';status.style.color='#4ade80';form.reset();
+  }catch{status.textContent='> failed — email me directly at haziqahmed31971@gmail.com';status.style.color='#f87171'}
+  btn.disabled=false;
+});
+</script>
+</body>
+</html>

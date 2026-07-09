@@ -196,7 +196,9 @@ h2.sec{font-size:clamp(1.8rem,4.4vw,2.6rem);font-weight:700;margin-bottom:16px}
 .big-cta .cy{color:var(--cyan-deep)}
 .contact-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:20px}
 @media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
-.clink{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 24px;margin-bottom:14px;transition:border-color .25s,transform .2s}
+.clink{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 24px;margin-bottom:14px;transition:border-color .25s,transform .2s}
+.clink .cicon{flex:0 0 auto;width:38px;height:38px;border-radius:10px;background:rgba(8,145,178,.1);display:flex;align-items:center;justify-content:center}
+.clink .cicon svg{width:18px;height:18px;stroke:var(--cyan-deep);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .clink:hover{border-color:var(--cyan);transform:translateX(4px)}
 .clink small{display:block;font-family:'JetBrains Mono',monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.15em;color:var(--cyan-deep);font-weight:700;margin-bottom:3px}
 .clink b{font-size:.96rem;font-weight:600}
@@ -310,7 +312,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
         <div class="avatar">HB</div>
         <h3>Haziq Ahmed Baig</h3>
         <p>Software QA Engineer</p>
-        <p>📍 Islamabad, Pakistan</p>
+        <p><svg viewBox="0 0 24 24" style="width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;vertical-align:-1px;margin-right:4px"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Islamabad, Pakistan</p>
         <span class="badge-open"><span class="dot-ok"></span>Open to work</span>
       </aside>
       <div class="about-body rv">
@@ -462,10 +464,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
     <p class="big-cta rv">Let's ship something<br/>that <span class="cy">doesn't break.</span></p>
     <div class="contact-grid">
       <aside class="rv">
-        <a class="clink" href="mailto:haziqahmed31971@gmail.com"><small>Email</small><b>haziqahmed31971@gmail.com</b></a>
-        <a class="clink" href="tel:+923051999984"><small>Phone</small><b>+92 305 1999984</b></a>
-        <a class="clink" href="https://linkedin.com/in/haziqbaig31" target="_blank" rel="noopener"><small>LinkedIn</small><b>linkedin.com/in/haziqbaig31</b></a>
-        <div class="clink"><small>Location</small><b>Islamabad, Pakistan</b></div>
+        <a class="clink" href="mailto:haziqahmed31971@gmail.com"><span class="cicon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span><span><small>Email</small><b>haziqahmed31971@gmail.com</b></span></a>
+        <a class="clink" href="tel:+923051999984"><span class="cicon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span><small>Phone</small><b>+92 305 1999984</b></span></a>
+        <a class="clink" href="https://linkedin.com/in/haziqbaig31" target="_blank" rel="noopener"><span class="cicon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span><span><small>LinkedIn</small><b>linkedin.com/in/haziqbaig31</b></span></a>
+        <div class="clink"><span class="cicon"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span><small>Location</small><b>Islamabad, Pakistan</b></span></div>
       </aside>
       <div class="contact-form rv">
         <form id="contactForm" novalidate action="https://formsubmit.co/ajax/haziqahmed31971@gmail.com" method="POST">
